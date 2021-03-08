@@ -21,6 +21,7 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix'=>'/api'], function () use($router){
     //todas as rotas dentro deste bloco terão o prefixo api
     $router->get('/series', 'SeriesController@index');
+    $router->get('/series/{id}', 'SeriesController@get');
     $router->post('/series', 'SeriesController@store');
 
 
