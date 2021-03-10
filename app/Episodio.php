@@ -12,4 +12,9 @@ class Episodio extends Model{
         return $this->belongsTo(Serie::class);
     }
 
+    //pega o atributo "assistido" de fillable e transforma pra true ou false
+    public function getAssistidoAttribute($assistido): bool{
+        return $assistido;
+    }
+
 }
