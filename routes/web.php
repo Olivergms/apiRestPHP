@@ -28,6 +28,8 @@ $router->group(['prefix'=>'/api'], function () use($router){
         $router->post('', 'SeriesController@store');
         $router->put('/{id}', 'SeriesController@update');
         $router->delete('/{id}', 'SeriesController@destroy');
+
+        $router->get('/{serieId}/episodios', 'EpisodiosController@buscaPorSerie');
     });
 
     //criando grupo com prefixo de episodios
