@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 abstract class BaseController{
     protected $classe;
-    public function index()
+    public function index(Request $request)
     {
-        return $this->classe::all();
+        return $this->classe::paginate($request->per_page);
     }//fim metodo
 
     public function store(Request $request){
