@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 /*criando um grupo para adicionar o prefixo /api*/
-$router->group(['prefix'=>'/api'], function () use($router){
+$router->group(['prefix'=>'/api','middleware'=>'auth'], function () use($router){
     //todas as rotas dentro deste bloco terão o prefixo api
 
     //criando grupo com prefixo series
@@ -42,4 +42,6 @@ $router->group(['prefix'=>'/api'], function () use($router){
     });
 
 });
+
+$router->post('/api/login', 'TokenController@gerarToken');
 
