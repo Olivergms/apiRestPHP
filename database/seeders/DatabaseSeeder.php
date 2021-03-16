@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->cal('UsuarioSeeder');
+        $this->call(UsuarioSeeder::class);
+
     }
 }

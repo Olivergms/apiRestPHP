@@ -2,9 +2,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Facades\Hash;
 use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class TokenController extends Controller
 {
@@ -27,7 +27,8 @@ class TokenController extends Controller
         }
         $token = JWT::encode(
             ['email' => $request->email],
-            env('JWT_KEY'));
+            env('JWT_KEY')
+        );
 
         return [
             'access_token' => $token
