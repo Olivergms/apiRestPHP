@@ -21,7 +21,7 @@ class Autenticador
 
             }
             $authorizationHeader = $request->header('Authorization');
-            $token = str_replace('Bearer: ', '', $authorizationHeader);
+            $token = str_replace('Bearer ', '', $authorizationHeader);
             //$token = str_replace('Bearer', '', $authorizationHeader);
             $dadosAutenticacao = JWT::decode($token, env('JWT_KEY'), ['HS256']);
 
